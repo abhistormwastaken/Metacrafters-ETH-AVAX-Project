@@ -4,24 +4,24 @@ pragma solidity 0.8.18;
 import "hardhat/console.sol";
 
 contract errorHandler{
-    uint public age;
+    uint public UserAge;
 
     function setAge(uint _age) public {
-        age=_age;
+        UserAge=_age;
     }
 
     function testAssert() public view{
-        assert(age>=18);
+        assert(UserAge>=18);
         console.log("You are an Adult");
 
     }
     function testRequire() public view{
-        require(age>=18, "Minors are not allowed");
+        require(UserAge>=18, "Minors are not allowed");
         console.log("You are an Adult");
         
     }
     function testRevert() public view{
-        if(age>=18){
+        if(UserAge>=18){
             console.log("You are an Adult");
         }
         else{
